@@ -33,6 +33,12 @@ Start the celery worker for our project---(mysite here is our project name you c
 
     celery -A mysite worker -l info
 
+Above command may fail tom execute the tasks
+
+    celery -A chatbot_v1.celery worker --loglevel=info -P eventlet (If you want to run multiple task simultaniously)
+
+    celery -A chatbot_v1.celery worker --loglevel=info -P solo (If you want to run single task at a time (query got executed with this command only))
+
 Start the Django Server
 
     python manage.py runserver
